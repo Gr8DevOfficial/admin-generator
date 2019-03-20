@@ -33,6 +33,9 @@ class AdminGeneratorServiceProvider extends ServiceProvider
         ]);
 
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'brackets/admin-generator');
+        $this->publishes([
+            __DIR__.'/../resources/views' => resource_path('views/vendor/brackets/admin-generator')
+        ], 'views');
     }
 
     /**
