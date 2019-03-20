@@ -73,7 +73,7 @@ class {{ $modelBaseName }} extends Model
     /* ************************ ACCESSOR ************************* */
 
     public function getResourceUrlAttribute() {
-        return url('/admin/{{$resource}}/'.$this->getKey());
+        return url('{{config('admin-generator.admin_url_prefix')}}{{$resource}}/'.$this->getKey());
     }
 
     @if (count($relations))/* ************************ RELATIONS ************************ */

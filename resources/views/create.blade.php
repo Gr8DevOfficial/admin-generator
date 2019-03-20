@@ -9,7 +9,7 @@
         <div class="card">
 
             <{{ $modelJSName }}-form
-                :action="'{{'{{'}} url('admin/{{ $resource }}') }}'"
+                :action="'{{'{{'}} url('{{ config('admin-generator.admin_url_prefix') }}{{ $resource }}') }}'"
                 @if($hasTranslatable):locales="@{{ json_encode($locales) }}"
                 :send-empty-locales="false"@endif
 

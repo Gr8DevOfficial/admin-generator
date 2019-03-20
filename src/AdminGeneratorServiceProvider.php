@@ -36,6 +36,9 @@ class AdminGeneratorServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__.'/../resources/views' => resource_path('views/vendor/brackets/admin-generator')
         ], 'views');
+        $this->publishes([
+            __DIR__.'/../config/admin-generator.php' => config_path('admin-generator.php'),
+        ], 'config');
     }
 
     /**
@@ -45,6 +48,8 @@ class AdminGeneratorServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->mergeConfigFrom(
+            __DIR__.'/../config/admin-generator.php', 'admin-generator'
+        );
     }
 }

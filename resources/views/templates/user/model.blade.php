@@ -79,7 +79,7 @@ class {{ $modelBaseName }} extends Authenticatable implements CanActivateContrac
     /* ************************ ACCESSOR ************************* */
 
     public function getResourceUrlAttribute() {
-        return url('/admin/{{$resource}}/'.$this->getKey());
+        return url('{{config('admin-generator.admin_url_prefix')}}{{$resource}}/'.$this->getKey());
     }
 
     public function getFullNameAttribute() {

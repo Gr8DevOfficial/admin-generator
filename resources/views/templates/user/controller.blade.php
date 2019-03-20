@@ -110,10 +110,10 @@ class {{ $controllerBaseName }} extends Controller
 @endif
 @endif
         if ($request->ajax()) {
-            return ['redirect' => url('admin/{{ $resource }}'), 'message' => trans('brackets/admin-ui::admin.operation.succeeded')];
+            return ['redirect' => url('{{ config('admin-generator.admin_url_prefix') }}{{ $resource }}'), 'message' => trans('brackets/admin-ui::admin.operation.succeeded')];
         }
 
-        return redirect('admin/{{ $resource }}');
+        return redirect('{{ config('admin-generator.admin_url_prefix') }}{{ $resource }}');
     }
 
     /**
@@ -189,10 +189,10 @@ class {{ $controllerBaseName }} extends Controller
 @endif
 
         if ($request->ajax()) {
-            return ['redirect' => url('admin/{{ $resource }}'), 'message' => trans('brackets/admin-ui::admin.operation.succeeded')];
+            return ['redirect' => url('{{ config('admin-generator.admin_url_prefix') }}{{ $resource }}'), 'message' => trans('brackets/admin-ui::admin.operation.succeeded')];
         }
 
-        return redirect('admin/{{ $resource }}');
+        return redirect('{{ config('admin-generator.admin_url_prefix') }}{{ $resource }}');
     }
 
     /**

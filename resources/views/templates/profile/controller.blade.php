@@ -85,7 +85,7 @@ class ProfileController extends Controller
         $this->{{ $modelVariableName }}->update($sanitized);
 
         if ($request->ajax()) {
-            return ['redirect' => url('admin/profile'), 'message' => trans('brackets/admin-ui::admin.operation.succeeded')];
+            return ['redirect' => url('{{config('admin-generator.admin_url_prefix')}}profile'), 'message' => trans('brackets/admin-ui::admin.operation.succeeded')];
         }
 
         return redirect('admin/profile');
