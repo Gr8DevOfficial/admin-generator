@@ -105,6 +105,6 @@ class Model extends ClassGenerator {
      */
     protected function getDefaultNamespace($rootNamespace)
     {
-        return $rootNamespace.'\Models';
+        return $rootNamespace;
     }
 }
