@@ -8,5 +8,5 @@ return [
     |
     */
 
-    'admin_url_prefix' => '/admin'
+    'admin_url_prefix' => '/admin/'
 ];
